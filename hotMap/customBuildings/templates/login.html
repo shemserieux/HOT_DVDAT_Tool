@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Login</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <link type="text/css" href="{% static 'css/admin.css' %}" rel="stylesheet" />
+	<link type="text/css" href="{% static 'css/form.css' %}" rel="stylesheet"  media="screen" />
+	<script type="text/javascript" src="{% static 'javascript/vendor/html5Forms.js' %}"></script>
+	<script type="text/javascript" src="{% static 'javascript/vendor/jquery_1.8.2.js' %}"></script>
+	<script type="text/javascript" src="{% static 'javascript/common.js' %}"></script>
+</head>
+<body>
+	<img src="{% static 'images/now_loading.gif' %}"  alt="Now loading" class = "nowloading" />
+	<div id="main">
+		<!-- Header -->
+		<div id="header">
+			<a href="#" class="logo"><img src="{% static 'images/HotOSM_logo.PNG' %}" height="65" alt="Humantarian Open Street Map Team" />Vulnerability and Damage Assessment tool</a>
+		</div>
+		<!-- End Header -->
+		<div class="middle">
+							
+			<div class="content">
+					<!-- Message OK -->		
+				<div class="msg msg-ok">
+					<p><strong></strong></p>
+					<a href="#" class="close">close</a>
+				</div>
+				<!-- End Message OK -->		
+
+				<!-- Message Error -->
+				<div class="msg msg-error"  {% if error_message%} style = 'display:block;' {% endif %}  >
+					<p><strong>{{error_message}}</strong></p>			
+					<a href="#" class="close">close</a>
+				</div>
+		<!-- End Message Error -->
+				<!--Customer Information Form Wrapper Start-->
+				
+				<div class="top-bar">
+					<h1>Login</h1>
+					<div class="breadcrumbs">Please enter your login credentials</div>
+				</div>		
+
+				<form id="login_form" name="login" method="post">{% csrf_token %}
+					<input type="hidden" name="next" value="{{next}}" />
+					<fieldset>
+						<legend>login info</legend>
+						<ol>
+							
+							<li>
+								<label for="username">User Name</label>
+								<input name="username" id="username" type="text" placeholder="srodney" required />
+							</li>
+							<li>
+								<label for="password">Password</label>
+								<input name="password" id="password" type="password" placeholder="xxxxx" required/>
+							</li>
+						</ol>
+						<input type="submit" class="button centerize" value="Login"/>
+						<!--<div class="button centerize" onclick="javascript:login();">Login</div>-->
+					</fieldset>					
+				</form>				
+			</div>
+		</div>
+<!-- Footer -->
+{% include "adminFooter.html" %}
+<!-- End Footer -->
+	</div>	
+	
+<script type="text/javascript">
+	window.onload = function() {			
+		H5F.setup(document.getElementById("login_form"));	
+	}	
+		
+	function clearForm(contextText){
+		$(contextText +" input").val("");
+	}
+	      
+	$(document).ready(function(){
+	
+    $('#login_form').submit(function(event){
+        if(this.checkValidity())
+        {
+		 login();
+        }
+    });	
+		
+    $('.msg a').click(function(event){
+		$(this).parent().hide(400);
+        preventDefaultBehaviour(event);
+		return false;
+    });	
+   
+ });
+</script>
+</body>
+</html>

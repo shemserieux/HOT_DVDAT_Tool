@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<script type="application/javascript" src="{% static 'js/jquery-3.6.1.js' %}"></script>
+<script>
+$(document).ready(function(){
+  $("p").filter(".intro").css("background-color", "yellow");
+  var foods = [{"type":"fruit", "name":"banana"}, {"type":"fruit", "name":"orange"},{"type":"veg", "name":"corn"},{"type":"grain", "name":"rice"}, {"type":"fruit", "name":"cherry"}]
+  var fruits = $(foods).filter(function(index){
+  	return this.type == "fruit"
+  });
+  
+  var fruit_names = $.map(fruits, function(fruit, index){return fruit.name});
+  console.log(fruit_names);
+  $.each(fruit_names, function(index, fruit){
+  	var txt = document.createElement("p");
+	$("#fruits").append($(txt).html(fruit));
+  });
+});
+</script>
+</head>
+<body>
+n
+<h1>Welcome to My Homepage</h1>
+
+<p>My name is Donald.</p>
+<div id = "fruits">
+</div>
+<p class="intro">I live in Duckburg.</p>
+<p class="intro">I love Duckburg.</p>
+<p>My best friend is Mickey.</p>
+
+</body>
+</html>

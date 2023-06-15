@@ -1,0 +1,62 @@
+body , select, input, input[type=text], input[type=tel], textarea, 
+select:disabled, input:disabled, input[type=text]:disabled, input[type=tel]:disabled, textarea:disabled, table{
+   color: black;
+   background: white;
+   font-size: 12pt;
+}
+
+form fieldset input:-ms-input-placeholder, form fieldset textarea:-ms-input-placeholder, form fieldset select:-ms-input-placeholder
+{
+ color: transparent;
+}
+
+form fieldset input:-moz-placeholder, form fieldset textarea:-moz-placeholder, form fieldset select:-moz-placeholder
+{
+ color: transparent;
+}
+
+form fieldset input::-webkit-input-placeholder, form fieldset textarea::-webkit-input-placeholder, form fieldset select::-webkit-input-placeholder
+{
+ color: transparent;
+}
+
+.content{
+	margin: 20px 20px;
+}
+#criteria{
+	display:block;
+}
+
+#main{
+	margin:12pt;
+}
+#middle{
+ width:792pt;
+ border:none;
+-moz-box-shadow:none;
+-webkit-box-shadow:none;
+box-shadow:none;
+}
+#shadow{
+	opacity:1;
+	background-color:white;
+}
+
+#header, .small-nav, input[type=button] , input[type=submit].button, #footer .shell .right, .button, 
+.button.centerize.new, .top-bar .button,#filter_contractor, .breadcrumbs, .file_download, .file_upload, 
+#comment-box, #add_comment, #footer, .append_row{
+	display:none;
+}
+select, input[type=number]{
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+select[disabled='disabled']::-ms-value {
+    color: black;
+}
+
+form fieldset{
+	page-break-inside: avoid;
+}

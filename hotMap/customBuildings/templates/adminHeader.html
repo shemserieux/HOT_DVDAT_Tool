@@ -1,0 +1,35 @@
+<div id="header">
+	<a href="#" class="logo"><img src="{% static 'images/HotOSM_logo.PNG' %}" height="65" alt="Humantarian Open Street Map Team" />Vulnerability and Damage Assessment tool</a>
+	<div id="options">
+		Welcome <strong id = "userName"></strong>
+		<span>|</span>
+		<a href="#Vunerability">New Damage Or Vunerability</a>
+		<span>|</span>
+			<a href="#userAdmin">User Admin</a><span>|</span>
+		<a id = "log_out" href="#">Log out</a>
+	</div>
+	<ul id="top-navigation">
+		<li><a id="homepage" href="#" class="active">Homepage</a></li>
+		<li><a id="addVunerability" href="#Vunerability">Add Vunerability</a></li>	
+			<li><a id="manageUsers" href="#userAdmin">Manage Users</a></li>
+		<li><a id="searchVunerabilitys" href="#searchVunerability">Search Vunerabilitys</a></li>
+		
+			<li><a id="reports" href="#">Reports</a></li>
+	</ul>
+	
+<script type="text/javascript">
+	$("#log_out").click(function (){
+		$.ajax({
+			url: "logout",
+			type:"POST",
+			contentType : "application/json; charset=UTF-8",
+			success: function(data){			  
+				window.location.href="login";
+			}			
+		});
+		preventDefaultBehaviour(event);
+		return false;
+	});
+	
+</script>
+</div>

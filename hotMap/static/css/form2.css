@@ -1,0 +1,489 @@
+/* 
+    Document   : form
+    Created on : Nov 22, 2012, 12:05:45 PM
+    Author     : Shem Serieux <shemserieux@gmail.com>
+    Description:
+        Purpose of the stylesheet follows.
+*/
+/* Just some base styles not needed for example to function */
+*, html { font-family: Verdana, Arial, Helvetica, sans-serif; }
+
+body, form, ul, li, p, h2, h3, h4, h5
+{
+	margin: 0;
+	padding: 0;
+}
+textarea {resize: none;}
+/*body { background-color: #606061; color: #ffffff; }*/
+img { border: none; }
+p
+{
+	font-size: 1em;
+	margin: 0 0 1em 0;
+}
+h2 { font-size: 14px; margin: 0 0 12px; }
+
+.opaqueLayer
+{
+	display:none;
+	position:absolute;
+	top:0px;
+	left:0px;
+	opacity:0.6;
+	filter:alpha(opacity=60);
+	background-color: #000000;
+	z-Index:1000;
+}
+
+.questionLayer
+{
+	position:absolute;
+	display:none;
+	z-Index:1001;
+}
+
+.buttonGroup{
+	width: 300px;
+	margin:0 auto;
+}
+
+.cellButtonGroup{
+	width: 70px;
+	display: block;
+	margin:5px auto 0 auto;
+}
+
+/*temporary button */
+.button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background-color:transparent;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#696469;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+	text-align:center;
+	
+}.button:active {
+	position:relative;
+	top:1px;
+}
+.centerize{
+	margin: auto;
+	display: block;
+	width: auto;
+}
+div.centerize{
+ width: 125px;
+}
+
+.first{
+	margin-left:0px;
+}
+
+.last{
+	margin-right: 0px;
+	float: right;
+}
+
+img.nowloading
+{	
+	position: fixed;
+	display: none;
+	z-Index:32;
+}
+
+.questionLayer div.subItem{
+	background-color: white;
+	border-radius: 20px;
+	padding: 20px;
+ }
+ 
+.questionLayer div.subItem form fieldset{
+	background-color: #dddddd;
+ }
+/* Form styles */
+.content
+{
+	margin: 20px 20px;
+}
+
+.top-bar{
+    margin-bottom: 20px;
+}
+form fieldset	
+{
+	margin: 0 0 20px;
+	padding: 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+	form ol
+	{
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+	form li
+	{
+		margin: 0 0 12px;
+		position: relative;
+	}
+	form label
+	{
+		width: 250px;
+		display: inline-block;
+		vertical-align: top;
+		margin-right:10px;
+		margin-top:3px;
+	}
+	form li div{
+		display: inline-block;
+		width: 505px;
+	}
+	
+	
+	form li span{margin:0 .3em 0 0;padding:0;float:left;color:#444}
+	form li span label{
+		width: 75px;
+		padding-top:3px;
+		font-size:85%;
+		line-height:160%;
+		color:#444;
+	}
+	form li span input{
+		width:150px;		
+	}
+	
+	form.user li span input{
+		width:371px;
+	}
+	
+	form li span.last label{
+		width: 70px;
+		text-align: right;
+		padding-right: 5px;
+	}
+	form li span.last input{
+		width:150px;		
+	}
+	form fieldset input,
+	form fieldset textarea,
+	form fieldset select
+	{
+		background: #fff url("../images/ico_validation.png") 379px -200px no-repeat;
+		display: inline-block;
+		width: 371px;
+		border: 1px solid;/*#fff*/
+		padding: 3px 26px 3px 3px;
+		
+		-moz-transition: background-color 1s ease;
+		-webkit-transition: background-color 1s ease;
+		-o-transition: background-color 1s ease;
+		transition: background-color 1s ease;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	form fieldset select		{ width: 401px; padding: 3px; }
+	form fieldset #postcode	{ padding: 3px; width: 400px; }
+	
+form li span input[type=radio], form li span input[type=checkbox]{
+	 width: 15px;
+	 margin: 3px 0;
+	 padding-right: 3px;
+	 margin-right: 3px;
+	}
+
+	form li span label.radio, form li span label.checkbox{
+	 margin-right:25px;
+	 margin-bottom: 10px;
+	 display:inline-block;
+	 width: 120px;	 
+	}
+		
+	form li span.eval_rad label.radio, form li span.eval_rad label.checkbox{
+	 margin-right:0px;
+	 width: 95px;	 
+	}
+
+
+form fieldset input:-ms-input-placeholder, form fieldset textarea:-ms-input-placeholder, form fieldset select:-ms-input-placeholder
+{
+ color: #E6E6E6;
+}
+
+form fieldset input:-moz-placeholder, form fieldset textarea:-moz-placeholder, form fieldset select:-moz-placeholder
+{
+ color: #E6E6E6;
+}
+
+form fieldset input::-webkit-input-placeholder, form fieldset textarea::-webkit-input-placeholder, form fieldset select::-webkit-input-placeholder
+{
+ color: #E6E6E6;
+}
+
+/* readOnly view */
+form fieldset input:disabled, form fieldset textarea:disabled, form fieldset select:disabled
+{
+ background: #f0f0f0;
+ border: 0;
+} 
+
+form fieldset input:disabled:-ms-input-placeholder, form fieldset textarea:disabled:-ms-input-placeholder, form fieldset select:disabled:-ms-input-placeholder
+{
+ color: transparent;
+}
+
+form fieldset input:disabled:-moz-placeholder, form fieldset textarea:disabled:-moz-placeholder, form fieldset select:disabled:-moz-placeholder
+{
+ color: transparent;
+}
+
+form fieldset input:disabled::-webkit-input-placeholder, form fieldset textarea:disabled::-webkit-input-placeholder, form fieldset select:disabled::-webkit-input-placeholder
+{
+ color: transparent;
+}
+/* readOnly view end*/
+
+/* Enhanced error styling */
+form input.invalid1, form textarea.invalid1
+{
+	background-color: pink; 
+	background-position: 379px 3px;
+	outline: none; 
+}
+form input.required1, form textarea.required1
+{
+	background-color: #fff; 
+	background-position: 379px -69px;/*-29px;*/
+}
+form input.valid1, form textarea.valid1
+{ 
+	background-color: #fff;
+	background-position: 379px -141px;/*-61px;*/
+}
+form fieldset input:required:valid, form fieldset textarea:required:valid
+{ 
+	background-color: #fff;
+	background-position: 379px -141px;/*-61px;*/
+}
+
+/**************** Missing stuff of validation boxes **************************/
+form input:focus:required:invalid, form textarea:focus:required:invalid
+{ 
+	background-color: pink; 
+	background-position: 379px 3px;
+	outline: none; 
+}
+form input[type=text]:focus:not([pattern]):required:invalid
+{
+	background-color: #fff; 
+	background-position: 379px -69px;/*-29px;*/
+}
+
+form .validation01, form .guide
+{ 
+	background: red;
+	color: #fff;
+	display: none;
+	font-size: 12px;
+	padding: 3px;
+	position: absolute;
+	right: -160px;
+	text-align: center;
+	top: 0;
+	width: 150px;
+	z-index: 300;
+	
+	-moz-box-shadow: 0px 0px 4px #ffffff;
+	-webkit-box-shadow: 0px 0px 4px #ffffff;
+    box-shadow: 0px 0px 4px #ffffff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+form input:focus + .guide, form select:focus + .guide, form textarea:focus + .guide { display: block; background: green; }
+form input:focus + .validation01, form textarea:focus + .validation01 { display: block; }
+
+form input:focus:required:valid + .validation01, form textarea:focus:required:valid + .validation01	{ background: green; }
+form input:focus:required:valid + .validation01 .invalid, form textarea:focus:required:valid + .validation01 .invalid	{ display: none; }
+form input:focus:required:invalid + .validation01 .valid, form textarea:focus:required:invalid + .validation01 .valid	{ display: none; }
+
+form input:focus:invalid + .validation01 .valid, form textarea:focus:invalid + .validation01 .valid	{ display: none; }
+form input:focus:valid + .validation01 .invalid, form textarea:focus:valid + .validation01 .invalid	{ display: none; }
+form input:focus:valid + .validation01, form textarea:focus:valid + .validation01	{ background: green; }
+
+form input:required:valid, form textarea:required:valid
+{ 
+	background-color: #fff;
+	background-position: 379px -141px;/*-61px;*/
+}
+
+/**************** End of support for validation boxes ******************/
+
+/*------------------------------------------------------------------------ my test ---------------------*/
+/* support for non html 5 browsers */
+
+form input:focus.required1.invalid1, form textarea:focus.required1.invalid1
+{ 
+	background-color: pink; 
+	background-position: 379px 3px;
+	outline: none; 
+}
+form input[type=text]:focus:not([pattern]).required1.invalid1
+{
+	background-color: #fff; 
+	background-position: 379px -69px;/*-29px;*/
+}
+
+/*form input:focus + .validation01, form textarea:focus + .validation01 { display: block; }*/
+
+form input:focus.required1.valid1 + .validation01, form textarea:focus.required1.valid1 + .validation01	{ background: green; }
+form input:focus.required1.valid1 + .validation01 .invalid, form textarea:focus.required1.valid1 + .validation01 .invalid	{ display: none; }
+form input:focus.required1.invalid1 + .validation01 .valid, form textarea:focus.required1.invalid1 + .validation01 .valid	{ display: none; }
+
+form input:focus.invalid1 + .validation01 .valid, form textarea:focus.invalid1 + .validation01 .valid	{ display: none; }
+form input:focus.valid1 + .validation01 .invalid, form textarea:focus.valid1 + .validation01 .invalid	{ display: none; }
+form input:focus.valid1 + .validation01, form textarea:focus.valid1 + .validation01	{ background: green; }
+
+form input.required1.valid1, form textarea.required1.valid1
+{ 
+	background-color: #fff;
+	background-position: 379px -141px;/*-61px;*/
+}
+/*--------------------- Stuff added by Uriahs ---------------------------*/
+
+table, td{
+border-spacing: 0px;
+border-collapse: collapse;
+
+}
+
+th{
+border-right: 1px solid black;
+font-family: Verdana, Arial, Georgia;
+/*text-decoration: underline;*/
+}
+
+.table_form_edit tr td .main_works{
+height:70px;
+}
+.main_works{
+width: 160px;
+border: 0px !important;
+resize:none;
+overflow: hidden;
+}
+
+.fill{
+ width: 100%;
+}
+
+tbody.five_row .main_works{
+ width:120px;
+}
+
+tbody.six_row .main_works{
+ width:96px;
+}
+
+.append_row{
+width:100px;
+height: 30px;
+background-color: black;
+color: white;
+line-height: 30px;
+opacity: 0.5;
+text-align: center;
+cursor: pointer;
+margin-top: 20px;
+}
+
+div.buttonclick{
+opacity: '0.8'; 
+border: 2px solid #7FFF00;
+}
+
+li span.three_items{
+  float: none;
+  display:inline-block;
+}
+li .three_items input{
+  width: 100px;
+  margin: 0px;
+}
+
+li span.three_items input.two_thirds{
+  width: 236px;
+}
+
+li span.annual_income{
+  float: left;
+  clear: left;
+  display:inline-block;
+  margin-bottom: 10px;
+}
+
+li .annual_income input{
+  width:55px;  
+}
+
+li .annual_income input.small_currency{
+  width: 100px;
+}
+
+/*
+body{
+background-color: #808069;
+}*/
+
+#bank_letter {
+width: 206px !important;
+}
+
+#certificate{
+width: 206px !important;
+}
+
+.collapseable{
+width: 25px;
+height: 25px;
+margin:auto;
+background: #fff url("../images/plus_minus_icons.png") -25px 0px no-repeat;
+}
+.expanded{
+background-position: 0px 0px;
+}
+
+.msg { position:relative; padding-right:35px; margin-bottom:10px; display:none; }
+.msg p{ padding:9px 10px 9px 40px; font-size:12px; background-repeat:no-repeat; background-position:10px 5px;}
+.msg a.close{ font-size:0; line-height:0; position:absolute; top:0; right:0; width:34px; height:34px; background:url(../images/close.gif); text-indent: -4000px;}
+.msg-comment { margin-left: 35px; display:block;}
+.msg-ok p{ background-color:#fffac2; border:solid 1px #dbd6a2; color:#5e5c40; background-image:url(../images/msg-ok.gif); }
+.msg-error p{ background-color:#f3c598; border:solid 1px #e8b084; color:#ba4c32; background-image:url(../images/msg-error.gif);  }
+.msg-comment p { background-size:23px 23px; background-image:url(../images/comment_black.ico); border:solid 1px #dbd6a2; background-color:#fffac2;}
+
+/*** CSS3 ***/
+
+.msg p { -moz-border-radius:6px; -webkit-border-radius:6px;}
+/*
+.box { -moz-border-radius:5px; -webkit-border-radius:5px; -moz-box-shadow: 0 0 6px #978f6c; -webkit-box-shadow: 0 0 6px #978f6c;}
+.box-head { -moz-border-radius-topleft:5px; -moz-border-radius-topright:5px; -webkit-border-top-left-radius:5px; -webkit-border-top-right-radius:5px; }
+
+.field, .button { -moz-border-radius:4px; -webkit-border-radius:4px; }
+.small-field, .button, .pagging a { -moz-border-radius:3px; -webkit-border-radius:3px; }
+
+
+.button { -moz-box-shadow: 0 0 2px #978f6c; -webkit-box-shadow: 0 0 2px #978f6c;}*/
